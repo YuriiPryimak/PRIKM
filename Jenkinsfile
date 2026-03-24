@@ -20,6 +20,13 @@ echo 'Pass'
 }
 }
 
+stage('Check nginx/custom') {
+steps {
+echo 'Ready'
+}
+}
+
+
 stage('Deploy nginx/custom'){
 steps{
 sh "docker run -d -p 80:80 nginx/custom:latest"
