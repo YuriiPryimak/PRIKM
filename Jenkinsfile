@@ -26,7 +26,7 @@ sh "docker push yuriipryimak/prikm:$BUILD_NUMBER"
 }
 stage('Deploy image'){
 steps{
-sh "docker run -d -p 80:80 yuriipryimak/prikm"
+sh "docker run -d -p 8081:80 yuriipryimak/prikm"
 }
 }
 }
