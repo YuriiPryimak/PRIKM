@@ -27,7 +27,7 @@ sh "docker push yuriipryimak/prikm:$BUILD_NUMBER"
 stage('Deploy image'){
 steps{
 sh 'docker rm -f my-website-container || true'
-sh 'docker run -d -p 8081:80 --name my-website-container yuriipryimak/prikm:latest'
+sh 'docker run -d -p 8082:80 --name my-website-container yuriipryimak/prikm:latest'
 }
 }
 }
