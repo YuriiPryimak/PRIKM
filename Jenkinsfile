@@ -1,19 +1,7 @@
-properties([
-    office365ConnectorWebhooks([
-        webhook(
-            name: 'Teams-Notifications',
-            url: 'https://outlook.office.com/webhook/77777777-8888-9999-aaaa-bbbbccccdddd/Jenkins_Alerts', 
-            startNotification: true,
-            notifySuccess: true,
-            notifyFailure: true,
-            notifyBackToNormal: true
-        )
-    ])
-])
-
 pipeline {
     agent any
     
+    // Цей блок активує кнопку "Build with Parameters"
     parameters {
         string(name: 'DOCKER_TAG', defaultValue: 'latest', description: 'Тег для Docker образу')
     }
@@ -27,25 +15,22 @@ pipeline {
         
         stage('Check environment') {
             steps {
-                echo 'Перевірка середовища...'
                 sh 'docker version'
             }
         }
 
         stage('Image build') {
             steps {
-                // Використовуємо параметр DOCKER_TAG
                 sh "docker build -t prikm:${params.DOCKER_TAG} ."
                 sh "docker tag prikm yuriipryimak/prikm:${params.DOCKER_TAG}"
-                sh "docker tag prikm yuriipryimak/prikm:latest"
             }
         }
 
         stage('Push to registry') {
             steps {
+                // Використовуйте свій ID credentials (у вас був 228)
                 withDockerRegistry([ credentialsId: "228", url: "" ]) {
                     sh "docker push yuriipryimak/prikm:${params.DOCKER_TAG}"
-                    sh "docker push yuriipryimak/prikm:latest"
                 }
             }
         }
