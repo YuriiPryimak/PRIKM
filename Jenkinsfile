@@ -1,7 +1,6 @@
 pipeline {
     agent any
     
-    // Цей блок активує кнопку "Build with Parameters"
     parameters {
         string(name: 'DOCKER_TAG', defaultValue: 'latest', description: 'Тег для Docker образу')
     }
@@ -28,7 +27,6 @@ pipeline {
 
         stage('Push to registry') {
             steps {
-                // Використовуйте свій ID credentials (у вас був 228)
                 withDockerRegistry([ credentialsId: "228", url: "" ]) {
                     sh "docker push yuriipryimak/prikm:${params.DOCKER_TAG}"
                 }
