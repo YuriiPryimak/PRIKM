@@ -1,3 +1,17 @@
+properties([
+    office365ConnectorWebhooks([
+        webhook([
+            name: 'Teams-0365',
+            url: 'http://outlook.office.com/webhook/your-id', // сюди вставляється лінк з Teams
+            startNotification: true,
+            notifySuccess: true,
+            notifyFailure: true,
+            notifyBackToNormal: true,
+            timeout: 30000
+        ])
+    ])
+])
+
 pipeline {
     agent any
     stages {
