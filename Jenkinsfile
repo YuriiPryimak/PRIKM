@@ -1,14 +1,14 @@
 properties([
     office365ConnectorWebhooks([
-        webhook([
+        webhook(
             name: 'Teams-0365',
-            url: 'https://outlook.office.com/webhook/a1b2c3d4-e5f6-7890-abcd-ef1234567890/IncomingWebhook/1234567890abcdef/987654321'
+            url: 'https://outlook.office.com/webhook/a1b2c3d4-e5f6-7890-abcd-ef1234567890/IncomingWebhook/1234567890abcdef/987654321',
             startNotification: true,
             notifySuccess: true,
             notifyFailure: true,
             notifyBackToNormal: true,
             timeout: 30000
-        ])
+        )
     ])
 ])
 
