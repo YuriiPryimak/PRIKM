@@ -1,0 +1,7 @@
+Started by user [8mha:////4BI83HZGHvmr8u91a5i8kbvdt9rXj9OoS9dYXzn7yjw+AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Lab_4
+[Lab_4] $ /bin/sh -xe /tmp/jenkins279293048883182207.sh
++ echo Hello Lab 4
+Hello Lab 4
+Finished: SUCCESS
