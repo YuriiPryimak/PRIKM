@@ -1,0 +1,6 @@
+---
+- name: Налаштування App Node
+  hosts: localhost
+  tasks:
+    - name: Запуск Node Exporter
+      shell: docker run -d --name node-exporter -p 9100:9100 prom/node-exporter || echo "Already running"
